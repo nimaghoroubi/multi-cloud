@@ -1,4 +1,3 @@
-from remote import add
 from addfunction import add
 
 add.delay(10,20)
