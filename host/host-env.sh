@@ -18,15 +18,11 @@ echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
 sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi
-
 # add new user
 sudo rabbitmqctl add_user killer killer &&
-
 # add new virtual host
 sudo rabbitmqctl add_vhost killer &&
-
 # set permissions for user on vhost
 sudo rabbitmqctl set_permissions -p killer killer ".*" ".*" ".*" &&
-
 # restart rabbit
 sudo service rabbitmq-server restart

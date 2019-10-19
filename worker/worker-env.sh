@@ -13,3 +13,4 @@ sudo python -m pip install celery &&
 echo "services ready, cloning repo"
 sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi
 echo "clone complete! running services!"
+(cd /multi/worker && screen -dmS celery celery worker -l info -A addfunction)
