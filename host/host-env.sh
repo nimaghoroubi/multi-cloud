@@ -17,4 +17,4 @@ sudo python -m pip install python-openstackclient &&
 echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
-sudo git clone https://github.com/nimaghoroubi/multi-cloud /host-service
+sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi
