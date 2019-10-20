@@ -26,7 +26,7 @@ sudo rabbitmqctl add_vhost killer &&
 sudo rabbitmqctl set_permissions -p killer killer ".*" ".*" ".*" &&
 # restart rabbit
 sudo service rabbitmq-server restart
-#screen -dmS service python /home/ubuntu/multi/host/service.py
+#screen -dmS service python /multi/host/service.py
 sudo apt snap aws-cli --classic &&
 aws configure set default.region eu-north-1
 #sample boot:

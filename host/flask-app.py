@@ -21,7 +21,7 @@ app.config['CELERY_RESULT_BACKEND'] = backend_adress
 celery = make_celery(app)
 
 @app.route('/')
-def addfunction(10,20):
+def addfunction():
     request = add_function.delay(10,20)
     return_value = request.get()
     return return_value
