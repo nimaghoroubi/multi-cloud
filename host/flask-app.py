@@ -12,7 +12,7 @@ with open("/multi/worker/addfunction.py", 'r+') as f:
     f.seek(0, 0)
     f.write(line.rstrip('\r\n') + '\n' + content)
 
-create_file(str(ip))
+create_file(str(ip)) # cloud config file
 
 
 broker = 'amqp://killer:killer@'+str(ip)+'/killer'
@@ -26,13 +26,13 @@ celery = make_celery(app)
 
 @app.route('/')
 def test():
-    request = add_function.delay(10,20) # the bug lies here, simplify this
+    request = add_function.delay(10,20)
     #return_value = request.get()
     #return return_value
     return("hi\n")
 
 
-@celery.task(name='addfunction.add')
+@celery.task(name='addfunction.add') #this name is important, investigate
 def add_function(a,b):
     data = add(a,b)
     return data

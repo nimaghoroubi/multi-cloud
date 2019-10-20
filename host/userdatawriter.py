@@ -1,4 +1,4 @@
-def create_file(body):
+def create_file(body): # body is ip of host server, this creates the cloud config file
     pre = """#cloud-config
 write_files:
   - path: /multi/addfunction.py
