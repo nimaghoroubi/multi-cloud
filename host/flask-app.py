@@ -15,11 +15,11 @@ with open("/multi/worker/addfunction.py", 'r+') as f:
 create_file(str(ip))
 
 
-backend_adress = 'amqp://killer:killer@'+str(ip)+'/killer'
+broker = 'amqp://killer:killer@'+str(ip)+'/killer'
 
 
 app = Flask(__name__)
-app.config['CELERY_BROKER_URL'] = backend_adress
+app.config['CELERY_BROKER_URL'] = broker
 app.config['CELERY_RESULT_BACKEND'] = 'amqp'
 
 celery = make_celery(app)
