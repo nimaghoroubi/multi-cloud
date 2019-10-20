@@ -26,8 +26,8 @@ sudo rabbitmqctl add_vhost killer &&
 sudo rabbitmqctl set_permissions -p killer killer ".*" ".*" ".*" &&
 # restart rabbit
 sudo service rabbitmq-server restart &&
-screen -dmS host sudo python /multi/host/flask-app.py
-sudo apt snap aws-cli --classic &&
-aws configure set default.region eu-north-1
+screen -dmS host sudo python /multi/host/flask-app.py &&
+sudo snap install  aws-cli --classic &&
+aws configure set default.region eu-north-1 &&
 #sample boot:
-#   aws ec2 run-instances --image-id ami-1dab2163 --count 1 --instance-type t3.micro --key-name EC2  --security-groups launch-wizard-2 --user-data /multi/user-data.txt
+aws ec2 run-instances --image-id ami-1dab2163 --count 2 --instance-type t3.micro --key-name EC2  --security-groups launch-wizard-2 --user-data file://user-data.txt
