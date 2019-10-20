@@ -1,10 +1,15 @@
 from flask import Flask
 from flask_celery import make_celery
 from addfunction import add
+from requests import get
+
+ip = get('https://api.ipify.org').text
+backend_adress = 'amqp://killer:killer@'+str(ip)+'/killer'
+
 
 app = Flask(__name__)
 app.config['CELERY_BROKER_URL'] = 'amqp'
-app.config['CELERY_RESULT_BACKEND'] = 'amqp://killer:killer@34.230.81.244/killer'
+app.config['CELERY_RESULT_BACKEND'] = backend_adress
 
 celery = make_celery(app)
 
