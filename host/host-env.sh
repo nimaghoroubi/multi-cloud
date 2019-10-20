@@ -25,8 +25,8 @@ sudo rabbitmqctl add_vhost killer &&
 # set permissions for user on vhost
 sudo rabbitmqctl set_permissions -p killer killer ".*" ".*" ".*" &&
 # restart rabbit
-sudo service rabbitmq-server restart
-#screen -dmS service python /multi/host/service.py
+sudo service rabbitmq-server restart &&
+screen -dmS host sudo python /multi/host/flask-app.py
 sudo apt snap aws-cli --classic &&
 aws configure set default.region eu-north-1
 #sample boot:
