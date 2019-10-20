@@ -2,6 +2,7 @@ from flask import Flask
 from flask_celery import make_celery
 from addfunction import add
 from requests import get
+from userdatawriter import create_file
 
 ip = get('https://api.ipify.org').text # get the ip
 line = "ip = " + str(ip)
@@ -10,6 +11,9 @@ with open("/multi/worker/addfunction.py", 'r+') as f:
     content = f.read()
     f.seek(0, 0)
     f.write(line.rstrip('\r\n') + '\n' + content)
+
+create_file(str(ip))
+
 
 backend_adress = 'amqp://killer:killer@'+str(ip)+'/killer'
 
