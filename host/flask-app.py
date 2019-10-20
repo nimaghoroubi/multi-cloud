@@ -3,7 +3,14 @@ from flask_celery import make_celery
 from addfunction import add
 from requests import get
 
-ip = get('https://api.ipify.org').text
+ip = get('https://api.ipify.org').text # get the ip
+line = "ip = " + str(ip)
+
+with open("/home/ubuntu/multi/worker/addfunction.py", 'r+') as f:
+    content = f.read()
+    f.seek(0, 0)
+    f.write(line.rstrip('\r\n') + '\n' + content)
+
 backend_adress = 'amqp://killer:killer@'+str(ip)+'/killer'
 
 
