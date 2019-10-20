@@ -18,18 +18,18 @@ def create_file(body):
 write_files:
   - path: /multi/addfunction.py
     content: |
-    from celery import Celery
+        from celery import Celery
 
-    broker_adress = 'amqp://killer:killer@"""
+        broker_adress = 'amqp://killer:killer@"""
 
     content = """/killer'
 
-              app = Celery('tasks', backend='amqp',
-              broker = broker_adress)
+        app = Celery('tasks', backend='amqp',
+        broker = broker_adress)
 
-              @app.task
-              def add(x, y):
-                  return x + y
+        @app.task
+        def add(x, y):
+            return x + y
 
 
 
