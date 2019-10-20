@@ -32,7 +32,7 @@ def test():
     return("hi\n")
 
 
-@celery.task(name='add_function.add')
+@celery.task(name='addfunction.add')
 def add_function(a,b):
     data = add(a,b)
     return data
