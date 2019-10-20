@@ -26,7 +26,7 @@ celery = make_celery(app)
 
 @app.route('/')
 def test():
-    #request = add_function.delay(10,20) # the bug lies here, simplify this
+    request = add_function.put(10,20) # the bug lies here, simplify this
     #return_value = request.get()
     #return return_value
     return("hi\n")
