@@ -31,10 +31,13 @@ sudo service rabbitmq-server restart &&
 screen -dmS host sudo python /multi/host/flask-app.py &&
 # ######################### installing aws and creating instances with config file
 sudo snap install  aws-cli --classic &&
+echo "aws installed" &&
 #eu-north-1
 #aws configure set default.region eu-north-1 &&
 #aws ec2 run-instances --image-id ami-1dab2163 --count 1 --instance-type t3.micro --key-name EC2  --security-groups launch-wizard-2 --user-data file://user-data.txt
 # us-east-1
 aws configure set default.region us-east-1 &&
+echo "zone configured" &&
 aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --user-data file:///user-data.txt &&
+echo "worker launched" &&
 sudo echo "Reached end" >> ~/final.txt
