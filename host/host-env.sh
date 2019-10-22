@@ -31,6 +31,7 @@ sudo service rabbitmq-server restart &&
 screen -dmS host sudo python /multi/host/flask-app.py &&
 # ######################### installing aws and creating instances with config file
 sudo snap install  aws-cli --classic &&
+sleep 5
 echo "aws installed" &&
 #eu-north-1
 #aws configure set default.region eu-north-1 &&
