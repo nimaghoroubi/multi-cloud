@@ -17,7 +17,7 @@ sudo python -m pip install python-openstackclient &&
 echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
-sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi
+sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi &&
 # ######################### setting login for rabbitmq
 # add new user
 sudo rabbitmqctl add_user killer killer &&
@@ -36,4 +36,5 @@ sudo snap install  aws-cli --classic &&
 #aws ec2 run-instances --image-id ami-1dab2163 --count 1 --instance-type t3.micro --key-name EC2  --security-groups launch-wizard-2 --user-data file://user-data.txt
 # us-east-1
 aws configure set default.region us-north-1 &&
-aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --user-data file:///user-data.txt
+aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --user-data file:///user-data.txt &&
+sudo echo "Reached end" >> ~/final.txt
