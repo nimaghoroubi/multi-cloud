@@ -47,8 +47,7 @@ runcmd:
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi
     - cd /multi
     - sudo git checkout parameters-playground
-    - cd
-    - celery worker -l info -A tasks
+    - (cd /home/ubuntu && celery worker -l info -A tasks)
             """
 
     with open("/home/ubuntu/user-data.txt", 'w+') as ud:
