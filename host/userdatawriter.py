@@ -1,7 +1,7 @@
 def create_file(body):  # body is ip of host server, this creates the cloud config file
     pre = """#cloud-config
 write_files:
-  - path: /multi/tasks.py
+  - path: /home/ubuntu/tasks.py
     content: |
         from celery import Celery
         from oct2py import Oct2Py
