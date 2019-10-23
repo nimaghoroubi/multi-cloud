@@ -4,6 +4,7 @@ write_files:
   - path: /home/ubuntu/tasks.py
     content: |
         from celery import Celery
+        import celery
         from oct2py import Oct2Py
         import json
 
@@ -17,7 +18,7 @@ write_files:
     content = """/killer'
         app = Celery('tasks', backend='amqp',
         broker = broker_adress)
-        @app.task
+        @celery.task
         def problem1(S, K, T, r, sig):
             #print('problem1')
             #res = json.dumps(octave.BSeuCallUI_RBFFD(S, K, T, r, sig).tolist())
