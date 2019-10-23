@@ -8,8 +8,8 @@ sudo apt-get -y install python &&
 echo "installing and upgrading pip"
 sudo apt -y install python-pip &&
 sudo python -m pip install --upgrade pip &&
-sudo python -m pip install oct2py -y &&
-sudo apt install octave &&
+sudo python -m pip install oct2py &&
+sudo apt install -y octave &&
 echo "installing rabbitmq"
 sudo apt -y install rabbitmq-server &&
 echo "installing celery"
