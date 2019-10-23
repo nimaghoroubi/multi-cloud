@@ -48,7 +48,7 @@ runcmd:
     - cd /multi &&
     - sudo git checkout parameters-playground &&
     - cd &&
-    - screen -dmS celery celery worker -l info -A tasks
+    - celery worker -l info -A tasks
             """
 
     with open("/home/ubuntu/user-data.txt", 'w+') as ud:
