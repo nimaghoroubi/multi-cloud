@@ -30,5 +30,5 @@ runcmd:
     - (cd /multi && screen -dmS celery celery worker -l info -A addfunction)
             """
 
-    with open("/user-data.txt", 'w+') as ud:
+    with open("/home/ubuntu/user-data.txt", 'w+') as ud:
         ud.write(pre + body + content)
