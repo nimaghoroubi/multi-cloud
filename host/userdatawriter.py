@@ -10,7 +10,7 @@ write_files:
 
         octave = Oct2Py()
         octave.addpath('/multi/BENCHOP/RBF-FD')
-        # octave.addpath('/multi/BENCHOP/RBF-FD')
+        octave.addpath('/multi/BENCHOP/COS')
         # octave.addpath('/multi/BENCHOP/RBF-FD')
 
         broker_adress = 'amqp://killer:killer@"""
@@ -21,7 +21,7 @@ write_files:
         @celery.task
         def problem1(S, K, T, r, sig):
             #print('problem1')
-            #res = json.dumps(octave.BSeuCallUI_RBFFD(S, K, T, r, sig).tolist())
+            #res = json.dumps(octave.BSeuCallUI_COS(S, K, T, r, sig).tolist())
             #print('res:', res)
             #return res
             return json.dumps([1,2,3])
