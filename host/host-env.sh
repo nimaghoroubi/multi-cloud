@@ -18,6 +18,7 @@ echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
 sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi &&
+(cd /multi && sudo git checkout Nima) &&
 # ######################### setting login for rabbitmq
 # add new user
 sudo rabbitmqctl add_user killer killer &&
@@ -34,6 +35,6 @@ sudo snap install  aws-cli --classic &&
 sleep 10 &&
 echo "aws installed after wait" &&
 /snap/bin/aws configure set default.region us-east-1 && echo "zone configured" ;
-/snap/bin/aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --user-data file:///user-data.txt &&
+/snap/bin/aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=worker}]' --user-data file:///home/ubuntu/user-data.txt &&
 echo "worker launched" &&
 sudo echo "Reached end" >> ~/final.txt
