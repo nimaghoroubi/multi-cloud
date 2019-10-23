@@ -2,7 +2,9 @@ from oct2py import Oct2Py
 import json
 
 octave = Oct2Py()
-octave.addpath('/Users/andreasivarsson/multi-cloud/BENCHOP/RBF-FD')
+octave.addpath('/multi/BENCHOP/RBF-FD')
+# octave.addpath('/multi/BENCHOP/RBF-FD')
+# octave.addpath('/multi/BENCHOP/RBF-FD')
 
 
 def problem1(S, K, T, r, sig):

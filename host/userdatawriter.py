@@ -1,17 +1,29 @@
-def create_file(body): # body is ip of host server, this creates the cloud config file
+def create_file(body):  # body is ip of host server, this creates the cloud config file
     pre = """#cloud-config
 write_files:
-  - path: /multi/addfunction.py
+  - path: /multi/tasks.py
     content: |
         from celery import Celery
+        from oct2py import Oct2Py
+        import json
+
+        octave = Oct2Py()
+        octave.addpath('/multi/BENCHOP/RBF-FD')
+        # octave.addpath('/multi/BENCHOP/RBF-FD')
+        # octave.addpath('/multi/BENCHOP/RBF-FD')
+
         broker_adress = 'amqp://killer:killer@"""
 
     content = """/killer'
         app = Celery('tasks', backend='amqp',
         broker = broker_adress)
         @app.task
-        def add(x, y):
-            return str(x + y)
+        def problem1(S, K, T, r, sig):
+            print('problem1')
+            res = json.dumps(octave.BSeuCallUI_RBFFD(S, K, T, r, sig).tolist())
+            print('res:', res)
+            return res
+
 
 
 
@@ -27,7 +39,10 @@ runcmd:
     - sudo python -m pip install --upgrade pip &&
     - echo "installing celery"
     - sudo python -m pip install celery &&
-    - (cd /multi && screen -dmS celery celery worker -l info -A addfunction)
+    - sudo apt install git -y &&
+    - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git &&
+    - sudo git checkout octave-playground &&
+    - (cd /multi && screen -dmS celery celery worker -l info -A tasks)
             """
 
     with open("/home/ubuntu/user-data.txt", 'w+') as ud:
