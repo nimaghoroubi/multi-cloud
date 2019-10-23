@@ -55,11 +55,13 @@ def problem_route(problem_id):
         r = parameters["r"]
         sig = parameters["sig"]
         print("S: ", S)
-        result = problem1.delay(S, K, T, r, sig)
+        res = problem1.delay(S, K, T, r, sig)
+        result = res.get()
+        print("RES: ", result)
 
     response = {}
     response["problemID"] = problem_id
-    response["result"] = json.loads(result.get())
+    response["result"] = json.loads(result)
     return jsonify(response)
 
 

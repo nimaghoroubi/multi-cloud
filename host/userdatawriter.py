@@ -19,10 +19,11 @@ write_files:
         broker = broker_adress)
         @app.task
         def problem1(S, K, T, r, sig):
-            print('problem1')
-            res = json.dumps(octave.BSeuCallUI_RBFFD(S, K, T, r, sig).tolist())
-            print('res:', res)
-            return res
+            #print('problem1')
+            #res = json.dumps(octave.BSeuCallUI_RBFFD(S, K, T, r, sig).tolist())
+            #print('res:', res)
+            #return res
+            return json.dumps([1,2,3])
 
 
 
@@ -39,12 +40,13 @@ runcmd:
     - sudo python -m pip install --upgrade pip &&
     - echo "installing celery"
     - sudo python -m pip install celery &&
-    - sudo apt install octave -y &&
-    - sudo apt install git -y &&
+    - sudo apt -y install octave &&
+    - sudo apt -y install git &&
     - sudo python -m pip install oct2py &&
-    - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git &&
-    - cd /multi
+    - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi &&
+    - cd /multi &&
     - sudo git checkout parameters-playground &&
+    - cd &&
     - screen -dmS celery celery worker -l info -A tasks
             """
 
