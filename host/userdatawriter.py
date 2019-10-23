@@ -41,7 +41,7 @@ runcmd:
     - sudo python -m pip install celery &&
     - sudo apt install git -y &&
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git &&
-    - sudo git checkout octave-playground &&
+    - sudo git checkout parameters-playground &&
     - (cd /multi && screen -dmS celery celery worker -l info -A tasks)
             """
 
