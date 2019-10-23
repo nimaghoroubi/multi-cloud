@@ -39,6 +39,7 @@ runcmd:
     - sudo python -m pip install --upgrade pip &&
     - echo "installing celery"
     - sudo python -m pip install celery &&
+    - sudo apt install octave -y &&
     - sudo apt install git -y &&
     - sudo python -m pip install oct2py &&
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git &&
