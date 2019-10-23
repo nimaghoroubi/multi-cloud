@@ -11,7 +11,7 @@ write_files:
         broker = broker_adress)
         @app.task
         def add(x, y):
-            return x + y
+            return str(x + y)
 
 
 
