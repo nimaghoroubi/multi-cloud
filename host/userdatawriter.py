@@ -43,8 +43,9 @@ runcmd:
     - sudo apt install git -y &&
     - sudo python -m pip install oct2py &&
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git &&
+    - cd /multi
     - sudo git checkout parameters-playground &&
-    - (cd /multi && screen -dmS celery celery worker -l info -A tasks)
+    - screen -dmS celery celery worker -l info -A tasks
             """
 
     with open("/home/ubuntu/user-data.txt", 'w+') as ud:
