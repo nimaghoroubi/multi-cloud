@@ -32,22 +32,22 @@ write_files:
 runcmd:
     - echo "starting ******************************************************************"
     - echo "installing updates"
-    - sudo apt-get update &&
-    - sudo apt-get -y upgrade &&
+    - sudo apt-get update
+    - sudo apt-get -y upgrade
     - echo "installing python"
-    - sudo apt-get -y install python &&
+    - sudo apt-get -y install python
     - echo "installing and upgrading pip"
-    - sudo apt -y install python-pip &&
-    - sudo python -m pip install --upgrade pip &&
+    - sudo apt -y install python-pip
+    - sudo python -m pip install --upgrade pip
     - echo "installing celery"
-    - sudo python -m pip install celery &&
-    - sudo apt -y install octave &&
-    - sudo apt -y install git &&
-    - sudo python -m pip install oct2py &&
-    - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi &&
-    - cd /multi &&
-    - sudo git checkout parameters-playground &&
-    - cd &&
+    - sudo python -m pip install celery
+    - sudo apt -y install octave
+    - sudo apt -y install git
+    - sudo python -m pip install oct2py
+    - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi
+    - cd /multi
+    - sudo git checkout parameters-playground
+    - cd
     - celery worker -l info -A tasks
             """
 
