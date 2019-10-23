@@ -27,9 +27,8 @@ celery = make_celery(app)
 @app.route('/')
 def test():
     request = add_function.delay(10,20)
-    #return_value = request.get()
-    #return return_value
-    return("hi\n")
+    return_value = request.get()
+    return return_value
 
 
 @celery.task(name='addfunction.add') #this name is important, investigate
