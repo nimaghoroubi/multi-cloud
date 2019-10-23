@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "starting ******************************************************************"
+echo "starting ****************************************************************** working"
 echo "installing updates"
 sudo apt-get update &&
 sudo apt-get -y upgrade &&
