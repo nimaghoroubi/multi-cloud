@@ -6,7 +6,7 @@ from requests import get
 from userdatawriter import create_file
 import tasks
 import time
-from scheduler import Schedule
+from scheduler import schedule
 
 ip = get('https://api.ipify.org').text  # get the ip
 line = "ip = " + str(ip)
