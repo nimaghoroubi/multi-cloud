@@ -23,12 +23,16 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-        if solver_name=="COS":
-            result = octave.BSeuCallUI_COS(S, K, T, r, sig)
-        elif solver_name=="RBFFD":
-            result = octave.BSeuCallUI_RBFFD(S, K, T, r, sig)
-        elif solver_name=="FD":
-            result = octave.BSeuCallUI_UniformGrid(S, K, T, r, sig)
+        try:
+            if solver_name=="COS":
+                result = octave.BSeuCallUI_COS(S, K, T, r, sig)
+            elif solver_name=="RBFFD":
+                result = octave.BSeuCallUI_RBFFD(S, K, T, r, sig)
+            elif solver_name=="FD":
+                result = octave.BSeuCallUI_UniformGrid(S, K, T, r, sig)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
+
 
     elif problem_id=="2":
 
@@ -41,12 +45,15 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-        if solver_name=="COS":
-            result = octave.BSamPutUI_COS(S, K, T, r, sig)
-        elif solver_name=="RBFFD":
-            result = octave.BSamPutUI_RBFFD(S, K, T, r, sig)
-        elif solver_name=="FD":
-            result = octave.BSamPutUI_UniformGrid(S, K, T, r, sig)
+        try:
+            if solver_name=="COS":
+                result = octave.BSamPutUI_COS(S, K, T, r, sig)
+            elif solver_name=="RBFFD":
+                result = octave.BSamPutUI_RBFFD(S, K, T, r, sig)
+            elif solver_name=="FD":
+                result = octave.BSamPutUI_UniformGrid(S, K, T, r, sig)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
 
 
     elif problem_id=="3":
@@ -61,13 +68,15 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-
-        if solver_name=="COS":
-            result = octave.BSupoutCallI_COS(S, K, T, r, sig, B)
-        elif solver_name=="RBFFD":
-            result = octave.BSupoutCallI_RBFFD(S, K, T, r, sig, B)
-        elif solver_name=="FD":
-            result = octave.BSupoutCallI_UniformGrid(S, K, T, r, sig, B)
+        try:
+            if solver_name=="COS":
+                result = octave.BSupoutCallI_COS(S, K, T, r, sig, B)
+            elif solver_name=="RBFFD":
+                result = octave.BSupoutCallI_RBFFD(S, K, T, r, sig, B)
+            elif solver_name=="FD":
+                result = octave.BSupoutCallI_UniformGrid(S, K, T, r, sig, B)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
 
     elif problem_id=="4":
 
@@ -80,12 +89,15 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-        if solver_name=="COS":
-            result = octave.BSeuCallUII_COS(S, K, T, r, sig)
-        elif solver_name=="RBFFD":
-            result = octave.BSeuCallUII_RBFFD(S, K, T, r, sig)
-        elif solver_name=="FD":
-            result = octave.BSeuCallUII_UniformGrid(S, K, T, r, sig)
+        try:
+            if solver_name=="COS":
+                result = octave.BSeuCallUII_COS(S, K, T, r, sig)
+            elif solver_name=="RBFFD":
+                result = octave.BSeuCallUII_RBFFD(S, K, T, r, sig)
+            elif solver_name=="FD":
+                result = octave.BSeuCallUII_UniformGrid(S, K, T, r, sig)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
 
     elif problem_id=="5":
 
@@ -98,12 +110,15 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-        if solver_name=="COS":
-            result = octave.BSamPutUII_COS(S, K, T, r, sig)
-        elif solver_name=="RBFFD":
-            result = octave.BSamPutUII_RBFFD(S, K, T, r, sig)
-        elif solver_name=="FD":
-            result = octave.BSamPutUII_UniformGrid(S, K, T, r, sig)
+        try:
+            if solver_name=="COS":
+                result = octave.BSamPutUII_COS(S, K, T, r, sig)
+            elif solver_name=="RBFFD":
+                result = octave.BSamPutUII_RBFFD(S, K, T, r, sig)
+            elif solver_name=="FD":
+                result = octave.BSamPutUII_UniformGrid(S, K, T, r, sig)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
 
     elif problem_id=="6":
 
@@ -117,14 +132,15 @@ def schedule(solver_name, problem_id, parameters):
         except:
             return json.dumps({'failure':False,'error':"Wrong input arguments for choice of solver {}".format(solver_name)})
 
-        if solver_name=="COS":
-            result = octave.BSupoutCallII_COS(S, K, T, r, sig, B)
-        elif solver_name=="RBFFD":
-            result = octave.BSupoutCallII_RBFFD(S, K, T, r, sig, B)
-        elif solver_name=="FD":
-            result = octave.BSupoutCallII_UniformGrid(S, K, T, r, sig, B)
-
-
+        try:
+            if solver_name=="COS":
+                result = octave.BSupoutCallII_COS(S, K, T, r, sig, B)
+            elif solver_name=="RBFFD":
+                result = octave.BSupoutCallII_RBFFD(S, K, T, r, sig, B)
+            elif solver_name=="FD":
+                result = octave.BSupoutCallII_UniformGrid(S, K, T, r, sig, B)
+        except:
+            return json.dumps({'failure':False,'error':"Solver crashed {}".format(solver_name)})
 
 
     if result is None:
