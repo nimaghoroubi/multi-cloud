@@ -48,8 +48,8 @@ def problem_route(problem_id):
                     break
             except:
                 result['result'] = "solver did not function as expected"
-                print("we are in except")
-            print("we are before sleep")
+                #print("we are in except")
+            #print("we are before sleep")
             time.sleep(1)
             if counter > 10:
                 result['result'] = "exceeded time limit"
