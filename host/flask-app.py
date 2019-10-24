@@ -36,8 +36,8 @@ def test():
 def allproblems():
     result = {}
     result_array = []
-    solvers = ["COS","FD"]#,"RBFFD"]
-    problems = ["1","2"]#,"3","4","5","6"]
+    solvers = ["COS","FD","RBFFD"]
+    problems = ["1","2","3","4","5","6"]
     for problem in problems:
         result[problem] = {}
         for solver in solvers:
@@ -47,8 +47,10 @@ def allproblems():
     for problem in problems:
         for solver in solvers:
             temp_result = result[problem][solver].get()
+	    print(temp_result)
+	    temp_result = json.loads(temp_result)
             if 'result' in temp_result:
-                result[problem][solver] = temp_result['result']
+                result[problem][solver] = temp_result['result'][0]
             else:
                 result[problem][solver] = temp_result['error']
 
