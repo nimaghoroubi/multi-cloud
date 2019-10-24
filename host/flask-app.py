@@ -52,7 +52,7 @@ def problem_route(problem_id):
             print("we are before sleep")
             time.sleep(1)
             if counter > 10:
-                presult['result'] = "exceeded time limit"
+                result['result'] = "exceeded time limit"
                 break
 
     print("RES: ", result)
