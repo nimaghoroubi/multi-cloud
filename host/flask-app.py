@@ -107,7 +107,7 @@ def problem_route(problem_id, solver_name):
     del result['failure']
     response = result
     response["ProblemID"] = problem_id
-    response["Sovler"] = solver_name
+    response["Solver"] = solver_name
     return jsonify(response)
 
 
