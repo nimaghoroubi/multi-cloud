@@ -163,8 +163,7 @@ def schedule(solver_name, problem_id, parameters):
     if result is None:
         return json.dumps({'failure':True,'error':'your task failed'})
 
-    res_list = result.tolist()
-    print("The list: ", res_list)
+    res_list = result.tolist()[0]
     res_list = list(map(operator.sub, U, res_list))
     res_list = list(map(operator.abs, res_list))
     return json.dumps({'failure':False, 'result':res_list, 'time': exec_time})
