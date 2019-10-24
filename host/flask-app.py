@@ -36,24 +36,9 @@ def test():
 def problem_route(problem_id):
 
     # solver_id = from request
-    parameters = {
-        "S": [90, 100, 110],
-        "K": 100,
-        "T": 1.0,
-        "r": 0.03,
-        "sig": 0.15,
-    }
-
     if problem_id == "1":
-        print('parameters: ', parameters)
-        S = parameters["S"]
-        K = parameters["K"]
-        T = parameters["T"]
-        r = parameters["r"]
-        sig = parameters["sig"]
-        print("S: ", S)
         while True:
-            res = problem1.delay(S, K, T, r, sig)
+            res = problem1.delay()
             try:
                 result = res.get()
                 result = json.loads(result)
@@ -61,10 +46,9 @@ def problem_route(problem_id):
                 if result['failure'] is False:
                     break
             except:
-                result = json.dumps(["solver did not function as expected"])
+                result['result'] = "solver did not function as expected"
             time.sleep(1)
 
-        result = res.get()
         print("RES: ", result)
 
     response = {}
@@ -80,7 +64,7 @@ def add_function(a, b):
 
 
 @celery.task(name="tasks.problem1")
-def problem1(S, K, T, r, sig):
+def problem1(S = [90, 100, 110], K = 100, T = 1, r = 0.03, sig = 0.15):
     return tasks.problem1(S, K, T, r, sig)
 
 
