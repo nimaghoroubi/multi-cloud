@@ -49,8 +49,7 @@ def problem_route(problem_id):
                 result['result'] = "solver did not function as expected"
             time.sleep(1)
 
-        print("RES: ", result)
-
+    print("RES: ", result)
     response = {}
     response["problemID"] = problem_id
     response["result"] = result['result']
