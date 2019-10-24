@@ -34,14 +34,13 @@ def test():
 
 @app.route('/problems/<problem_id>',)
 def problem_route(problem_id):
-
+    result = {}
     # solver_id = from request
     if problem_id == "1":
         while True:
             res = problem1.delay()
             try:
-                result = res.get()
-                result = json.loads(result)
+                result = json.loads(res.get())
                 print(result)
                 if result['failure'] is False:
                     break
