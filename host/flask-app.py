@@ -6,6 +6,7 @@ from requests import get
 from userdatawriter import create_file
 import tasks
 import time
+from scheduler import Schedule
 
 ip = get('https://api.ipify.org').text  # get the ip
 line = "ip = " + str(ip)
@@ -32,36 +33,26 @@ def test():
     return "You are at the right place\n"
 
 
-@app.route('/problems/<problem_id>',)
-def problem_route(problem_id):
-
-    result = {}
-    # variables placeholder
-    S = None
-    K = None
-    T = None
-    r = None
-    sig = None
-
-    # solver_id = from request
-    if problem_id == "1":
-        counter = 0
-        while True:
-            counter = counter + 1
-            res = problem1.delay(S, K, T, r, sig)
-            try:
-                result = json.loads(res.get())
-                print(result)
-                if result['failure'] is False:
-                    break
-            except:
-                result['result'] = "solver did not function as expected"
-                #print("we are in except")
-            #print("we are before sleep")
-            time.sleep(1)
-            if counter > 10:
-                result['result'] = "exceeded time limit"
+@app.route('/problems/<problem_id>/<solver_name>',)
+def problem_route(problem_id, solver_name):
+    parameters = request.args
+    counter = 0
+    while True:
+        counter = counter + 1
+        res = schedule_creator.delay(solver_name, problem_id, parameters)
+        try:
+            result = json.loads(res.get())
+            print(result)
+            if result['failure'] is False:
                 break
+        except:
+            result['result'] = "solver did not function as expected"
+            #print("we are in except")
+        #print("we are before sleep")
+        time.sleep(1)
+        if counter > 10:
+            result['result'] = "exceeded time limit"
+            break
 
     print("RES: ", result)
     response = {}
@@ -76,15 +67,9 @@ def add_function(a, b):
     return data
 
 
-@celery.task(name="tasks.problem1")
-def problem1(S, K, T, r, sig):
-    S = [90, 100, 110] if S is None else S
-    K = 100 if K is None else K
-    T = 1 if T is None else T
-    r = 0.03 if r is None else r
-    sig = 0.15 if sig is None else sig
-
-    return tasks.problem1(S, K, T, r, sig)
+@celery.task(name="tasks.schedule_creator")
+def schedule_creator(solver_name, problem_id, parameters):
+    return shedule(solver_name, problem_id, parameters)
 
 
 if __name__ == '__main__':

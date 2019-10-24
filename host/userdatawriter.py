@@ -7,11 +7,7 @@ write_files:
         import celery
         from oct2py import Oct2Py
         import json
-
-        octave = Oct2Py()
-        octave.addpath('/multi/BENCHOP/RBF-FD')
-        octave.addpath('/multi/BENCHOP/COS')
-        # octave.addpath('/multi/BENCHOP/RBF-FD')
+        from scheduler import schedule
 
         broker_adress = 'amqp://killer:killer@"""
 
@@ -19,18 +15,8 @@ write_files:
         app = Celery('tasks', backend='amqp',
         broker = broker_adress)
         @celery.task
-        def problem1(S, K, T, r, sig):
-            #print('problem1')
-            result = octave.BSeuCallUI_COS(S, K, T, r, sig)
-            if result is None:
-                return json.dumps({'failure':True})
-            res = json.dumps({'failure':False, 'result':result.tolist()})
-            #res = json.dumps(octave.BSeuCallUI_COS(S, K, T, r, sig).tolist())
-            #print('res:', res)
-            return res
-            #return json.dumps([1,2,3])
-
-
+        def schedule_creator(solver_name, problem_id, parameters):
+            return schedule(solver_name, problem_id, parameters)
 
 
 runcmd:
@@ -51,6 +37,7 @@ runcmd:
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi
     - cd /multi
     - sudo git checkout parameters-playground
+    - cp /multi/host/scheduler.py /home/ubuntu/scheduler.py
     - (cd /home/ubuntu && celery worker -l info -A tasks)
             """
 
