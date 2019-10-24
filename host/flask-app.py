@@ -46,6 +46,8 @@ def problem_route(problem_id):
                     break
             except:
                 result['result'] = "solver did not function as expected"
+                print("we are in except")
+            print("we are before sleep")
             time.sleep(1)
 
     print("RES: ", result)
