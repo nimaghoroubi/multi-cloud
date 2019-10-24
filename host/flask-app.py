@@ -35,6 +35,7 @@ def test():
 
 @app.route('/problems/<problem_id>/<solver_name>',)
 def problem_route(problem_id, solver_name):
+    result = {}
     parameters = request.args
     counter = 0
     while True:

@@ -4,20 +4,19 @@ from oct2py import Oct2Py
 import json
 
 def schedule(solver_name, problem_id, parameters):
-    return json.dumps({'failure':False,'result':"it works"})
-    
+    result = None
     octave = Oct2Py()
     octave.addpath('/multi/BENCHOP/RBF-FD')
     octave.addpath('/multi/BENCHOP/COS')
     octave.addpath('/multi/BENCHOP/FD')
 
-    if problem_id==1:
+    if problem_id=="1":
 
-        parameters['S'] = [90, 100, 110] if S is None else S
-        K = 100 if K is None else K
-        T = 1 if T is None else T
-        r = 0.03 if r is None else r
-        sig = 0.15 if sig is None else sig
+        S = [90, 100, 110] if parameters.get('S') is None else parameters['S']
+        K = 100 if parameters.get('K') is None else parameters['K']
+        T = 1 if parameters.get('T') is None else parameters['T']
+        r = 0.03 if parameters.get('r') is None else parameters['r']
+        sig = 0.15 if parameters.get('sig') is None else parameters['sig']
 
         if solver_name=="COS":
             result = octave.BSeuCallUI_COS(S, K, T, r, sig)
