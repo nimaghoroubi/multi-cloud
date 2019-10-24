@@ -3,6 +3,7 @@ import celery
 from oct2py import Oct2Py
 import json
 import time
+import operator
 
 def schedule(solver_name, problem_id, parameters):
 
