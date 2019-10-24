@@ -70,11 +70,11 @@ def add_function(a, b):
 
 @celery.task(name="tasks.problem1")
 def problem1(S, K, T, r, sig):
-    S = S if S is None else [90, 100, 110]
-    K = K if K is None else 100
-    T = T if T is None else 1
-    r = r if r is None else 0.03
-    sig = sig if sig is None else 0.15
+    S = [90, 100, 110] if S is None else S
+    K = 100 if K is None else K
+    T = 1 if T is None else T
+    r = 0.03 if r is None else r
+    sig = 0.15 if sig is None else sig
 
     return tasks.problem1(S, K, T, r, sig)
 
