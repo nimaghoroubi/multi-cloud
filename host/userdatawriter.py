@@ -21,6 +21,10 @@ write_files:
         @celery.task
         def problem1(S, K, T, r, sig):
             #print('problem1')
+            result = octave.BSeuCallUI_COS(S, K, T, r, sig)
+            if result is None:
+                return json.dumps({'failure':True})
+            res = json.dumps({'failure':False, 'result':result.tolist()})
             #res = json.dumps(octave.BSeuCallUI_COS(S, K, T, r, sig).tolist())
             #print('res:', res)
             #return res
