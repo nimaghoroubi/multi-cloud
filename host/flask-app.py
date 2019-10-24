@@ -66,7 +66,7 @@ def allproblems():
                         temp_result = json.loads(temp_result)
                         print(temp_result)
                         if 'result' in temp_result:
-                            result[problem][solver] = temp_result['result'][0]
+                            result[problem][solver] = temp_result['result']
                         else:
                             result[problem][solver] = temp_result['error']
                     except:
