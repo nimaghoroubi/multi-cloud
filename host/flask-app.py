@@ -37,7 +37,9 @@ def problem_route(problem_id):
     result = {}
     # solver_id = from request
     if problem_id == "1":
+        counter = 0
         while True:
+            counter = counter + 1
             res = problem1.delay()
             try:
                 result = json.loads(res.get())
@@ -49,6 +51,9 @@ def problem_route(problem_id):
                 print("we are in except")
             print("we are before sleep")
             time.sleep(1)
+            if counter > 10:
+                presult['result'] = "exceeded time limit"
+                break
 
     print("RES: ", result)
     response = {}
