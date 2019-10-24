@@ -27,7 +27,7 @@ celery = make_celery(app)
 @app.route('/')
 def test():
     #request = add_function.delay(10, 20)
-    #request.ready()
+    # request.ready()
     #return_value = request.get()
     return "You are at the right place\n"
 
@@ -69,7 +69,13 @@ def add_function(a, b):
 
 
 @celery.task(name="tasks.problem1")
-def problem1(S = [90, 100, 110], K = 100, T = 1, r = 0.03, sig = 0.15):
+def problem1(S, K, T, r, sig):
+    S = S if S is None else [90, 100, 110]
+    K = K if K is None else 100
+    T = T if T is None else 1
+    r = r if r is None else 0.03
+    sig = sig if sig is None else 0.15
+
     return tasks.problem1(S, K, T, r, sig)
 
 
