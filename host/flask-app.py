@@ -24,6 +24,8 @@ app.config['CELERY_RESULT_BACKEND'] = 'amqp'
 
 celery = make_celery(app)
 
+MAX_TRIES = 10
+SUCCESS_VAL = 9999
 
 @app.route('/')
 def test():
@@ -35,26 +37,43 @@ def test():
 @app.route('/problems')
 def allproblems():
     result = {}
+    status = {}
     result_array = []
     solvers = ["COS","FD","RBFFD"]
     problems = ["1","2","3","4","5","6"]
     for problem in problems:
         result[problem] = {}
+        status[problem] = {}
         for solver in solvers:
             result[problem][solver] = schedule_creator.delay(solver,problem,{})
+            status[problem][solver] = MAX_TRIES
 
 
-    for problem in problems:
-        for solver in solvers:
-            temp_result = result[problem][solver].get()
-	    print(temp_result)
-	    temp_result = json.loads(temp_result)
-            if 'result' in temp_result:
-                result[problem][solver] = temp_result['result'][0]
-            else:
-                result[problem][solver] = temp_result['error']
+    done = False
+    while not done:
+        done = True
+        for problem in problems:
+            for solver in solvers:
+                if status[problem][solver] == SUCCESS_VAL:
+                    continue
+                elif status[problem][solver] < 0:
+                    result[problem][solver] = {"failure": True, "error": "exceeded time limit"}
+                    status[problem][solver] = SUCCESS_VAL
+                else:
+                    try:
+                        temp_result = result[problem][solver].get()
+                        status[problem][solver] = SUCCESS_VAL
+                        temp_result = json.loads(temp_result)
+                        print(temp_result)
+                        if 'result' in temp_result:
+                            result[problem][solver] = temp_result['result'][0]
+                        else:
+                            result[problem][solver] = temp_result['error']
+                    except:
+                        result[problem][solver] = schedule_creator.delay(solver,problem,{})
+                        status[problem][solver] -= 1
+                        done = False
 
-            
     return_value = jsonify(result)
     print(return_value)
     return return_value
