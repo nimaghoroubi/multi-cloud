@@ -32,6 +32,26 @@ def test():
     #return_value = request.get()
     return "You are at the right place\n"
 
+@app.route('/problems')
+def allproblems():
+    result = {}
+    result_array = []
+    solvers = ["COS","FD"]#,"RBFFD"]
+    problems = ["1","2"]#,"3","4","5","6"]
+    for problem in problems:
+        result[problem] = {}
+        for solver in solvers:
+            result[problem][solver] = schedule_creator.delay(solver,problem,{})
+
+
+    for problem in problems:
+        for solver in solvers:
+            result[problem][solver] = result[problem][solver].get()
+
+
+    return_value = jsonify(result)
+    print(return_value)
+    return return_value
 
 @app.route('/problems/<problem_id>/<solver_name>')
 def problem_route(problem_id, solver_name):
