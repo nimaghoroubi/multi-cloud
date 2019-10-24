@@ -46,9 +46,13 @@ def allproblems():
 
     for problem in problems:
         for solver in solvers:
-            result[problem][solver] = result[problem][solver].get()
+            temp_result = result[problem][solver].get()
+            if 'result' in temp_result:
+                result[problem][solver] = temp_result['result']
+            else:
+                result[problem][solver] = temp_result['error']
 
-
+            
     return_value = jsonify(result)
     print(return_value)
     return return_value
