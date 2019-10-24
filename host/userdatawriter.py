@@ -27,8 +27,8 @@ write_files:
             res = json.dumps({'failure':False, 'result':result.tolist()})
             #res = json.dumps(octave.BSeuCallUI_COS(S, K, T, r, sig).tolist())
             #print('res:', res)
-            #return res
-            return json.dumps([1,2,3])
+            return res
+            #return json.dumps([1,2,3])
 
 
 
