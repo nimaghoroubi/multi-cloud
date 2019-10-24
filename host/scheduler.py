@@ -4,6 +4,17 @@ from oct2py import Oct2Py
 import json
 
 def schedule(solver_name, problem_id, parameters):
+
+
+    try:
+        S = [90, 100, 110] if parameters.get('S') is None else list(map(float,parameters['S'].split(',')))
+        K = 100 if parameters.get('K') is None else float(parameters['K'])
+        T = 1 if parameters.get('T') is None else float(parameters['T'])
+        r = 0.03 if parameters.get('r') is None else float(parameters['r'])
+        sig = 0.15 if parameters.get('sig') is None else float(parameters['sig'])
+    except:
+        return json.dumps({'failure':False,'result':"Wrong input arguments for choice of solver {}".format(solver_name)})
+
     result = None
     octave = Oct2Py()
     octave.addpath('/multi/BENCHOP/RBF-FD')
@@ -11,12 +22,6 @@ def schedule(solver_name, problem_id, parameters):
     octave.addpath('/multi/BENCHOP/FD')
 
     if problem_id=="1":
-
-        S = [90, 100, 110] if parameters.get('S') is None else parameters['S']
-        K = 100 if parameters.get('K') is None else parameters['K']
-        T = 1 if parameters.get('T') is None else parameters['T']
-        r = 0.03 if parameters.get('r') is None else parameters['r']
-        sig = 0.15 if parameters.get('sig') is None else parameters['sig']
 
         if solver_name=="COS":
             result = octave.BSeuCallUI_COS(S, K, T, r, sig)
