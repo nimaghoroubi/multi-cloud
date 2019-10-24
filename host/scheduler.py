@@ -164,6 +164,6 @@ def schedule(solver_name, problem_id, parameters):
         return json.dumps({'failure':True,'error':'your task failed'})
 
     res_list = result.tolist()
-    map(operator.sub, U, res_list)
-    map(operator.abs, res_list)
+    res_list = list(map(operator.sub, U, res_list))
+    res_list = list(map(operator.abs, res_list))
     return json.dumps({'failure':False, 'result':res_list, 'time': exec_time})
