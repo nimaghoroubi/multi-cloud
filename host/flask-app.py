@@ -65,10 +65,12 @@ def allproblems():
                         status[problem][solver] = SUCCESS_VAL
                         temp_result = json.loads(temp_result)
                         print(temp_result)
-                        if 'result' in temp_result:
-                            result[problem][solver] = temp_result['result']
-                        else:
-                            result[problem][solver] = temp_result['error']
+                        #if 'result' in temp_result:
+                        #    result[problem][solver] = temp_result['result']
+                        #else:
+                        #    result[problem][solver] = temp_result['error']
+                        del temp_result['failure']
+                        result[problem][solver] = temp_result
                     except:
                         result[problem][solver] = schedule_creator.delay(solver,problem,{})
                         status[problem][solver] -= 1
@@ -103,8 +105,9 @@ def problem_route(problem_id, solver_name):
 
     print("RES: ", result)
     response = {}
+    del result['failure']
+    response = result
     response["problemID"] = problem_id
-    response["result"] = result['result']
     return jsonify(response)
 
 
