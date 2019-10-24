@@ -5,6 +5,7 @@ from addfunction import add
 from requests import get
 from userdatawriter import create_file
 import tasks
+import time
 
 ip = get('https://api.ipify.org').text  # get the ip
 line = "ip = " + str(ip)
@@ -51,13 +52,24 @@ def problem_route(problem_id):
         r = parameters["r"]
         sig = parameters["sig"]
         print("S: ", S)
-        res = problem1.delay(S, K, T, r, sig)
+        while True:
+            res = problem1.delay(S, K, T, r, sig)
+            try:
+                result = res.get()
+                result = json.loads(result)
+                print(result)
+                if result['failure'] is False:
+                    break
+            except:
+                result = json.dumps(["solver did not function as expected"])
+            time.sleep(1)
+
         result = res.get()
         print("RES: ", result)
 
     response = {}
     response["problemID"] = problem_id
-    response["result"] = json.loads(result)
+    response["result"] = result['result']
     return jsonify(response)
 
 
