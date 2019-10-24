@@ -34,13 +34,21 @@ def test():
 
 @app.route('/problems/<problem_id>',)
 def problem_route(problem_id):
+
     result = {}
+    # variables placeholder
+    S = None
+    K = None
+    T = None
+    r = None
+    sig = None
+
     # solver_id = from request
     if problem_id == "1":
         counter = 0
         while True:
             counter = counter + 1
-            res = problem1.delay()
+            res = problem1.delay(S, K, T, r, sig)
             try:
                 result = json.loads(res.get())
                 print(result)
