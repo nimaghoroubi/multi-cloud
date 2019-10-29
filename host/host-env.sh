@@ -20,7 +20,6 @@ echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
 sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi &&
-(cd /multi && sudo git checkout parameters-playground) &&
 # ######################### setting login for rabbitmq
 # add new user
 sudo rabbitmqctl add_user killer killer &&
