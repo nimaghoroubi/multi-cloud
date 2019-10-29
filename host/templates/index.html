@@ -1,0 +1,127 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Benchmark</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Benchmark</h1>
+    </header>
+    <main class="main">
+      <div class="button-container">
+        <button data-problem="1" data-solver="COS" class="button solver-button">
+          1.COS
+        </button>
+        <button
+          data-problem="1"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          1.RBFFD
+        </button>
+        <button data-problem="1" data-solver="FD" class="button solver-button">
+          1.FD
+        </button>
+
+        <button data-problem="2" data-solver="COS" class="button solver-button">
+          2.COS
+        </button>
+        <button
+          data-problem="2"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          2.RBFFD
+        </button>
+        <button data-problem="2" data-solver="FD" class="button solver-button">
+          2.FD
+        </button>
+        <button data-problem="3" data-solver="COS" class="button solver-button">
+          3.COS
+        </button>
+        <button
+          data-problem="3"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          3.RBFFD
+        </button>
+        <button data-problem="3" data-solver="FD" class="button solver-button">
+          3.FD
+        </button>
+        <button data-problem="4" data-solver="COS" class="button solver-button">
+          4.COS
+        </button>
+        <button
+          data-problem="4"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          4.RBFFD
+        </button>
+        <button
+          disabled
+          data-problem="4"
+          data-solver="FD"
+          class="button solver-button disabled"
+        >
+          4.FD
+        </button>
+        <button data-problem="5" data-solver="COS" class="button solver-button">
+          5.COS
+        </button>
+        <button
+          data-problem="5"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          5.RBFFD
+        </button>
+        <button
+          disabled
+          data-problem="5"
+          data-solver="FD"
+          class="button solver-button disabled"
+        >
+          5.FD
+        </button>
+        <button data-problem="6" data-solver="COS" class="button solver-button">
+          6.COS
+        </button>
+        <button
+          data-problem="6"
+          data-solver="RBFFD"
+          class="button solver-button"
+        >
+          6.RBFFD
+        </button>
+        <button
+          data-problem="6"
+          data-solver="FD"
+          disabled
+          class="button solver-button disabled"
+        >
+          6.FD
+        </button>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart" class="chart"></canvas>
+        <div>
+          <span class="button red">Failed</span>
+          <span class="button orange">Time</span>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="{{ url_for('static', filename = 'script.js') }}"></script>
+  </body>
+</html>
