@@ -36,7 +36,6 @@ runcmd:
     - sudo python -m pip install oct2py
     - sudo git clone https://github.com/nimaghoroubi/multi-cloud.git /multi
     - cd /multi
-    - sudo git checkout parameters-playground
     - sudo cp /multi/host/scheduler.py /home/ubuntu/scheduler.py
     - (cd /home/ubuntu && celery worker -l info -A tasks)
             """
