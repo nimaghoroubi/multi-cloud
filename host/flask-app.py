@@ -89,6 +89,56 @@ def allproblems():
     return return_value
 
 
+@app.route('/benchmark/<problem_id>/<solver_name>')
+def problem_route(problem_id, solver_name):
+    print("/benchmark/" + problem_id + "/" + solver_name)
+    num_of_runs = int(request.args.get("runs", 1))
+
+    result = []
+    status = []
+
+    start_time = time.time()
+    for run_nr in xrange(num_of_runs):
+        result.append(schedule_creator.delay(
+            solver_name, problem_id, request.args))
+        status.append(MAX_TRIES)
+
+    done = False
+    while not done:
+        done = True
+        for run_nr in xrange(num_of_runs):
+
+            if status[run_nr] == SUCCESS_VAL:
+                pass
+            elif status[run_nr] < 0:
+
+                result[run_nr] = {
+                    "error": "exceeded time limit"}
+                status[run_nr] = SUCCESS_VAL
+            else:
+                try:
+                    temp_result = result[run_nr].get()
+                    status[run_nr] = SUCCESS_VAL
+                    temp_result = json.loads(temp_result)
+                    del temp_result['failure']
+                    result[run_nr] = temp_result
+
+                except:
+
+                    result[run_nr] = schedule_creator.delay(
+                        solver_name, problem_id, request.args)
+                    status[run_nr] -= 1
+                    done = False
+            print(result)
+    response = {}
+    response["number_of_runs"] = num_of_runs
+    response["total_time"] = time.time() - start_time
+    response["sample_result"] = result[0]
+    return_value = jsonify(response)
+    print(return_value)
+    return return_value
+
+
 @app.route('/problems/<problem_id>/<solver_name>')
 def problem_route(problem_id, solver_name):
     result = {}

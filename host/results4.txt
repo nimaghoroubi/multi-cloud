@@ -1,0 +1,410 @@
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:23:46 GMT
+
+{
+  "number_of_runs": 1,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.014248847961425781
+  },
+  "total_time": 0.6556830406188965
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:23:50 GMT
+
+{
+  "number_of_runs": 1,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01749277114868164
+  },
+  "total_time": 0.29680800437927246
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:23:52 GMT
+
+{
+  "number_of_runs": 1,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.02504897117614746
+  },
+  "total_time": 0.29781389236450195
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:23:57 GMT
+
+{
+  "number_of_runs": 2,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.02117300033569336
+  },
+  "total_time": 0.29064393043518066
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:23:59 GMT
+
+{
+  "number_of_runs": 2,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010138988494873047
+  },
+  "total_time": 0.23622894287109375
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:02 GMT
+
+{
+  "number_of_runs": 2,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010298013687133789
+  },
+  "total_time": 0.24662303924560547
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:07 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010807037353515625
+  },
+  "total_time": 0.47262001037597656
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:09 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010163068771362305
+  },
+  "total_time": 0.45908498764038086
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:12 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009993791580200195
+  },
+  "total_time": 0.47926902770996094
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:18 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009958028793334961
+  },
+  "total_time": 0.6738591194152832
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:20 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010107040405273438
+  },
+  "total_time": 0.7279441356658936
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:23 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009920120239257812
+  },
+  "total_time": 0.6782150268554688
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:29 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01014399528503418
+  },
+  "total_time": 0.9797210693359375
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:34 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010172128677368164
+  },
+  "total_time": 0.9395558834075928
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:37 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009992122650146484
+  },
+  "total_time": 0.9555709362030029
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:44 GMT
+
+{
+  "number_of_runs": 20,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01018381118774414
+  },
+  "total_time": 1.2094428539276123
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:47 GMT
+
+{
+  "number_of_runs": 20,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009963035583496094
+  },
+  "total_time": 1.179414987564087
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:50 GMT
+
+{
+  "number_of_runs": 20,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010165929794311523
+  },
+  "total_time": 1.2082879543304443
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:24:57 GMT
+
+{
+  "number_of_runs": 25,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009952068328857422
+  },
+  "total_time": 1.7500038146972656
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:25:00 GMT
+
+{
+  "number_of_runs": 25,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010200023651123047
+  },
+  "total_time": 1.762483835220337
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 228
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:25:09 GMT
+
+{
+  "number_of_runs": 30,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01034092903137207
+  },
+  "total_time": 4.020816087722778
+}
+
+
+
+
+@app.route('/benchmark/<problem_id>/<solver_name>')
+def problem_route(problem_id, solver_name):
+    print("/benchmark/" + problem_id + "/" + solver_name)
+    num_of_runs = int(request.args.get("runs", 1))
+
+    result = []
+    status = []
+
+    start_time = time.time()
+    for run_nr in xrange(num_of_runs):
+        result.append(schedule_creator.delay(
+            solver_name, problem_id, request.args))
+        status.append(MAX_TRIES)
+
+    done = False
+    while not done:
+        done = True
+        for run_nr in xrange(num_of_runs):
+
+            if status[run_nr] == SUCCESS_VAL:
+                pass
+            elif status[run_nr] < 0:
+
+                result[run_nr] = {
+                    "error": "exceeded time limit"}
+                status[run_nr] = SUCCESS_VAL
+            else:
+                try:
+                    temp_result = result[run_nr].get()
+                    status[run_nr] = SUCCESS_VAL
+                    temp_result = json.loads(temp_result)
+                    del temp_result['failure']
+                    result[run_nr] = temp_result
+
+                except:
+
+                    result[run_nr] = schedule_creator.delay(
+                        solver_name, problem_id, request.args)
+                    status[run_nr] -= 1
+                    done = False
+            print(result)
+    response = {}
+    response["number_of_runs"] = num_of_runs
+    response["total_time"] = time.time() - start_time
+    response["sample_result"] = result[0]
+    return_value = jsonify(response)
+    print(return_value)
+    return return_value
