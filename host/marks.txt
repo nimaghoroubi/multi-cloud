@@ -1,3 +1,0 @@
-Runs 1.cos 10 works but 20 will not return a respond
-Since FLAKS only handles one req at time not possible had to rewrite route.
-No response at 10min+ after that can reach route out noting happens. 
