@@ -90,7 +90,7 @@ def allproblems():
 
 
 @app.route('/benchmark/<problem_id>/<solver_name>')
-def problem_route(problem_id, solver_name):
+def benchmark_route(problem_id, solver_name):
     print("/benchmark/" + problem_id + "/" + solver_name)
     num_of_runs = int(request.args.get("runs", 1))
 
