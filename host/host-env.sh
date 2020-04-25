@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "starting ******************************************************************"
+echo "starting ****************************************************************** working"
 echo "installing updates"
 sudo apt-get update &&
 sudo apt-get -y upgrade &&
@@ -8,6 +8,8 @@ sudo apt-get -y install python &&
 echo "installing and upgrading pip"
 sudo apt -y install python-pip &&
 sudo python -m pip install --upgrade pip &&
+sudo python -m pip install oct2py &&
+sudo apt install -y octave &&
 echo "installing rabbitmq"
 sudo apt -y install rabbitmq-server &&
 echo "installing celery"
@@ -18,7 +20,6 @@ echo "installing flask"
 sudo apt -y install python-flask &&
 echo "services ready, cloning repo"
 sudo git clone https://github.com/nimaghoroubi/multi-cloud /multi &&
-(cd /multi && sudo git checkout Nima) &&
 # ######################### setting login for rabbitmq
 # add new user
 sudo rabbitmqctl add_user killer killer &&
@@ -32,7 +33,6 @@ sudo service rabbitmq-server restart &&
 screen -dmS host sudo python /multi/host/flask-app.py &&
 # ######################### installing aws and creating instances with config file
 sudo snap install  aws-cli --classic &&
-sleep 10 &&
 echo "aws installed after wait" &&
 /snap/bin/aws configure set default.region us-east-1 && echo "zone configured" ;
 /snap/bin/aws ec2 run-instances --image-id ami-04b9e92b5572fa0d1 --count 1 --instance-type t2.micro --key-name multi  --security-groups multi --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=worker}]' --user-data file:///home/ubuntu/user-data.txt &&

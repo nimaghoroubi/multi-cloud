@@ -1,0 +1,239 @@
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:10:36 GMT
+
+{
+  "number_of_runs": 1,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010158061981201172
+  },
+  "total_time": 0.22043895721435547
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:10:42 GMT
+
+{
+  "number_of_runs": 2,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01007699966430664
+  },
+  "total_time": 0.23086905479431152
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:10:47 GMT
+
+{
+  "number_of_runs": 3,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.009850025177001953
+  },
+  "total_time": 0.4456970691680908
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:10:53 GMT
+
+{
+  "number_of_runs": 2,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010419130325317383
+  },
+  "total_time": 0.24219608306884766
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 228
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:10:59 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01003885269165039
+  },
+  "total_time": 0.6898460388183594
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:02 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010156869888305664
+  },
+  "total_time": 0.7040450572967529
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:05 GMT
+
+{
+  "number_of_runs": 5,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010195016860961914
+  },
+  "total_time": 0.7154297828674316
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:10 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010341882705688477
+  },
+  "total_time": 1.1937379837036133
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:14 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01020503044128418
+  },
+  "total_time": 1.1921241283416748
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:17 GMT
+
+{
+  "number_of_runs": 10,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01050114631652832
+  },
+  "total_time": 1.1696181297302246
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 230
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:26 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010113954544067383
+  },
+  "total_time": 1.8311560153961182
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 228
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:30 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010226011276245117
+  },
+  "total_time": 1.93156099319458
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:33 GMT
+
+{
+  "number_of_runs": 15,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.01025700569152832
+  },
+  "total_time": 1.9977760314941406
+}HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 229
+Server: Werkzeug/0.10.4 Python/2.7.12
+Date: Wed, 30 Oct 2019 16:11:43 GMT
+
+{
+  "number_of_runs": 20,
+  "sample_result": {
+    "result": [
+      7.574393148779279e-05,
+      9.678822726311154e-05,
+      0.0002907299557541876
+    ],
+    "time": 0.010127067565917969
+  },
+  "total_time": 5.219458818435669
+}
